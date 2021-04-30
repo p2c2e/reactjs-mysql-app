@@ -1,0 +1,19 @@
+FROM node:alpine3.13
+# FROM node:13.12.0-alpine
+
+WORKDIR /opt/app
+
+# add `/opt/app/node_modules/.bin` to $PATH
+ENV PATH /opt/app/node_modules/.bin:$PATH
+
+# install app dependencies
+COPY ui-src/package.json ./
+COPY ui-src/package-lock.json ./
+RUN npm install --silent
+#RUN npm install react-scripts@3.4.0 -g --silent
+
+# add app
+COPY ./ui-src/ ./
+
+# start app
+CMD ["npm", "start"]
