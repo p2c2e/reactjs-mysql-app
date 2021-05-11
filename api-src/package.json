@@ -16,7 +16,9 @@
     "body-parse": "^0.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-sequelize-crud": "^6.1.5",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^5.0.0",
+    "sqlite3": "^5.0.2"
   }
 }
