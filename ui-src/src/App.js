@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import Home from './Home';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import ItemList from './CustomerList2';
-import CustomerEdit from './CustomerEdit';
+import ItemList from './ItemList';
+import CustomerEdit from './ItemEdit';
 
 class App extends Component {
     render() {
@@ -11,8 +11,6 @@ class App extends Component {
             <Router>
                 <Switch>
                     <Route path='/' exact={true} component={Home}/>
-                    {/*<Route path='/customers' exact={true} component={CustomerList}/>*/}
-                    {/*<Route path='/customers/:id' component={CustomerEdit}/>*/}
                     <Route
                         path='/customers/:id'
                         render={(props) => (

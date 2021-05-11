@@ -18,7 +18,6 @@ class ItemList extends Component {
     fetch(this.props.apiUrl)
       .then(response => response.json())
       .then(data => this.setState({items: data, isLoading: false}));
-    console.log("____________##################_______________")
   }
 
   async remove(id) {
@@ -49,10 +48,6 @@ class ItemList extends Component {
               <td>{item[attr]}</td>
         ))
         }
-        {/*<td style={{whiteSpace: 'nowrap'}}>{customer.firstname}</td>*/}
-        {/*<td>{customer.lastname}</td>*/}
-        {/*<td>{customer.age}</td>*/}
-        {/*<td>{customer.address}</td>*/}
         <td>
           <ButtonGroup>
             <Button size="sm" color="primary" tag={Link} to={this.props.uiUrl + "/" + item.id}>Edit</Button>
@@ -67,9 +62,9 @@ class ItemList extends Component {
         <AppNavbar/>
         <Container fluid>
           <div className="float-right">
-            <Button color="success" tag={Link} to={this.props.uiUrl+"/new"}>Add Customer</Button>
+            <Button color="success" tag={Link} to={this.props.uiUrl+"/new"}>Add Item</Button>
           </div>
-          <h3>Customer List</h3>
+          <h3>Item List</h3>
           <Table className="mt-4">
             <thead>
               <tr>
@@ -79,11 +74,6 @@ class ItemList extends Component {
                       <th>{attr}</th>
                   ))
                 }
-                {/*<th width="20%">Firstname</th>*/}
-                {/*<th width="20%">Lastname</th>*/}
-                {/*<th width="10%">Age</th>*/}
-                {/*<th>Address</th>*/}
-                {/*<th width="10%">Actions</th>*/}
               </tr>
             </thead>
             <tbody>
