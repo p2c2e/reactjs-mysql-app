@@ -37,7 +37,7 @@ class ItemEdit extends Component {
     event.preventDefault();
     const {item} = this.state;
 
-    const _apiUrl = this.props.apiUrl;
+    const _apiUrl = (item.id) ? this.props.apiUrl + "/" + item.id : this.props.apiUrl;
     console.log(JSON.stringify(item));
     console.log(_apiUrl);
     await fetch(`${_apiUrl}`, {

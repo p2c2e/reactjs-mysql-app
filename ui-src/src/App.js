@@ -4,6 +4,7 @@ import Home from './Home';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import ItemList from './ItemList';
 import CustomerEdit from './ItemEdit';
+import TagTest from './TagTest';
 
 class App extends Component {
     render() {
@@ -21,8 +22,7 @@ class App extends Component {
                                                   "firstname": '',
                                                   "lastname": '',
                                                   "age": '',
-                                                  "address": '',
-                                                  "copyrigtby": ''
+                                                  "address": ''
                                               }
                                           }
                             />
@@ -60,6 +60,31 @@ class App extends Component {
                         )}
                     />
 
+                    <Route
+                        path='/short/:id'
+                        render={(props) => (
+                            <CustomerEdit {...props} apiUrl={'/api/employee'} uiUrl="/short"
+                                          attrs={['emp_id', 'firstname']}
+                                          emptyItem={
+                                              {
+                                                  "emp_id": '',
+                                                  "firstname": '',
+                                                  "lastname": '',
+                                                  "supervisor_id": ''
+                                              }
+                                          }
+                            />
+                        )}
+                    />
+                    <Route
+                        path='/short'
+                        render={(props) => (
+                            <ItemList {...props} apiUrl={'/api/employee'} uiUrl="/short"
+                                      attrs={['emp_id', 'firstname']}/>
+                        )}
+                    />
+
+                    <Route path='/tagger' exact={true} component={TagTest}/>
                 </Switch>
             </Router>
         )

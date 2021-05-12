@@ -35,6 +35,9 @@ class Home extends Component {
                     <Button color="link"><Link to="/employees">Manage Employee List</Link></Button>
                     </Row>
                     <Row>
+                        <Button color="link"><Link to="/tagger">Tag Test</Link></Button>
+                    </Row>
+                    <Row>
                         <div className="autocomplete-wrapper">
                             <h3>React Autocomplete Demo</h3>
                             <Autocomplete
